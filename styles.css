@@ -1,0 +1,522 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Pearson Color Variables */
+:root {
+    --chalk-white: #FFFFFF;
+    --ink-black: #000000;
+    --mist-grey: #F5F5F5;
+    --graphite-grey: #333333;
+    --sunshine: #FFBB1C;
+    --lime: #D2DB0E;
+    --aqua: #94E7EA;
+    --coral: #FF757A;
+    --green: #84BD00;
+    --teal: #12B2A6;
+    --purple: #9E007E;
+    --forest: #008638;
+    --navy: #003057;
+    --primary-font: 'Open Sans', sans-serif;
+}
+
+/* Global Font Settings */
+body {
+    font-family: var(--primary-font);
+    font-weight: 600;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+    font-weight: 600;
+}
+
+/* Base Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Month Navigation Styles */
+.month-navigation {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 2rem !important;
+}
+
+#currentMonth {
+    text-align: center !important;
+    flex: 1 !important;
+    margin: 0 1rem !important;
+}
+
+/* Help Link Styles */
+.help-link {
+    color: var(--navy) !important;
+    text-decoration: none !important;
+    font-size: 0.875rem !important;
+    opacity: 0.8 !important;
+    transition: all 0.2s ease-in-out !important;
+    border-bottom: 1px dotted var(--navy) !important;
+}
+
+.help-link:hover {
+    opacity: 1 !important;
+    color: var(--teal) !important;
+    border-bottom-color: var(--teal) !important;
+}
+
+.help-link svg {
+    transition: transform 0.2s ease-in-out !important;
+}
+
+.help-link:hover svg {
+    transform: translate(2px, -2px) !important;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background-color: var(--mist-grey);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+/* Weekday Headers */
+.weekday-header {
+    background-color: var(--navy);
+    color: var(--chalk-white);
+    padding: 0.75rem;
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-weight: 600;
+}
+
+/* Calendar Days */
+.calendar-day {
+    background-color: var(--chalk-white);
+    min-height: 100px;
+    padding: 0.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.2s ease;
+}
+
+.calendar-day.empty {
+    background-color: var(--mist-grey);
+}
+
+.calendar-day.has-events {
+    cursor: pointer;
+}
+
+.calendar-day.has-events:hover {
+    background-color: var(--mist-grey);
+}
+
+/* Day Number */
+.day-number {
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Event Indicators */
+.event-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-top: auto;
+}
+
+.event-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+/* Event Types */
+.event-indicator.general {
+    background-color: var(--coral);
+}
+
+.event-indicator.vocational {
+    background-color: var(--purple);
+}
+
+.event-indicator.international {
+    background-color: var(--teal);
+}
+
+/* Base Button Styles */
+button.calendar-button {
+    background-color: var(--chalk-white) !important;
+    color: var(--navy) !important;
+    border: 2px solid var(--navy) !important;
+    border-radius: 2rem !important; /* Made more rounded */
+    padding: 0.75rem 1.5rem !important;
+    font-family: var(--primary-font) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    min-width: 100px !important;
+    text-decoration: none !important;
+}
+
+button.calendar-button:hover {
+    background-color: var(--navy) !important;
+    color: var(--chalk-white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px rgba(0, 48, 87, 0.15) !important;
+}
+
+button.calendar-button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(0, 48, 87, 0.1) !important;
+}
+
+/* Navigation Buttons */
+button.calendar-button.prev,
+button.calendar-button.next {
+    min-width: 120px !important; /* Increased width for better spacing */
+    padding: 0.75rem 1rem !important;
+    white-space: nowrap !important;
+}
+button.calendar-button.prev::before {
+    content: "←" !important;
+    font-size: 1.2em !important;
+    line-height: 1 !important;
+}
+
+button.calendar-button.next::after {
+    content: "→" !important;
+    font-size: 1.2em !important;
+    line-height: 1 !important;
+}
+
+/* Subscription Styles */
+.subscription-options {
+    margin-top: 1rem;
+}
+
+.subscription-option {
+    background-color: var(--chalk-white);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--mist-grey);
+}
+
+/* Subscribe and Copy Buttons */
+.subscribe-btn,
+.copy-btn {
+    border-radius: 2rem !important; /* Made more rounded */
+    padding: 0.75rem 1.5rem !important;
+}
+
+.subscribe-btn {
+    background-color: var(--teal) !important;
+    color: var(--chalk-white) !important;
+    border: 2px solid var(--teal) !important;
+}
+
+.copy-btn {
+    background-color: var(--chalk-white) !important;
+    border: 2px solid var(--navy) !important;
+    color: var(--navy) !important;
+}
+
+.copy-btn:hover {
+    background-color: var(--navy) !important;
+    color: var(--chalk-white) !important;
+    transform: translateY(-2px) !important;
+}
+
+.copy-btn span {
+    transition: all 0.2s ease;
+}
+
+/* Modal Styles */
+.event-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--chalk-white);
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 32rem;
+    margin: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh; /* Limit the height */
+    overflow: hidden; /* Hide overflow */
+}
+
+#modalEvents {
+    overflow-y: auto; /* Add vertical scrolling */
+    max-height: calc(80vh - 120px); /* Reserve space for header and close button */
+    padding-right: 10px; /* Add some padding for the scrollbar */
+}
+
+/* Style the scrollbar for better appearance */
+#modalEvents::-webkit-scrollbar {
+    width: 8px;
+}
+
+#modalEvents::-webkit-scrollbar-track {
+    background: var(--mist-grey);
+    border-radius: 4px;
+}
+
+#modalEvents::-webkit-scrollbar-thumb {
+    background-color: var(--navy);
+    border-radius: 4px;
+}
+
+/* Modal Event Items */
+.event-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid transparent;
+    background-color: var(--mist-grey);
+    transition: transform 0.2s ease;
+}
+
+.event-item:hover {
+    transform: translateX(4px);
+}
+
+.event-item.general {
+    border-left-color: var(--coral);
+    background-color: rgba(255, 117, 122, 0.1);
+}
+
+.event-item.vocational {
+    border-left-color: var(--purple);
+    background-color: rgba(158, 0, 126, 0.1);
+}
+
+.event-item.international {
+    border-left-color: var(--teal);
+    background-color: rgba(18, 178, 166, 0.1);
+}
+
+/* Event Content */
+.event-item h4 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ink-black);
+}
+
+.event-item p {
+    color: var(--graphite-grey);
+    font-size: clamp(0.875rem, 1.2vw, 1rem);
+    margin-bottom: 0.5rem;
+}
+
+.event-item a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.event-item a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+/* Close Button */
+button.close-button {
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+    background-color: var(--chalk-white) !important;
+    color: var(--navy) !important;
+    border: 2px solid var(--navy) !important;
+    border-radius: 2rem !important;
+    padding: 0.5rem 1.25rem !important;
+    font-family: var(--primary-font) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease-in-out !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+button.close-button:hover {
+    background-color: var(--navy) !important;
+    color: var(--chalk-white) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+button.close-button::before {
+    content: "×";
+    font-size: 1.2em;
+    line-height: 1;
+    margin-right: 0.25rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+}
+
+#loading .loading-spinner {
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .calendar-day {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .calendar-day {
+        min-height: 80px;
+        padding: 0.25rem;
+    }
+
+    .event-indicator {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .modal-content {
+        margin: 0.5rem;
+        padding: 1rem;
+        max-height: 85vh;
+    }
+    
+    #modalEvents {
+        max-height: calc(85vh - 100px);
+    }
+    
+    button.calendar-button {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+        min-width: 80px !important;
+    }
+    
+    button.calendar-button.prev,
+    button.calendar-button.next {
+        padding: 0.5rem 0.75rem !important;
+    }
+    
+    .subscription-option {
+        padding: 0.75rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+    
+    .subscribe-btn,
+    .copy-btn {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+    
+    button.close-button {
+        padding: 0.4rem 1rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+.color-key {
+    margin-bottom: 1.5rem;
+}
+
+.key-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.key-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.key-dot.general {
+    background-color: var(--coral);
+}
+
+.key-dot.vocational {
+    background-color: var(--purple);
+}
+
+.key-dot.international {
+    background-color: var(--teal);
+}
+
+@media (max-width: 640px) {
+    .color-key {
+        padding: 0.75rem;
+    }
+    
+    .key-item {
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .calendar-controls,
+    .search-controls,
+    .filter-controls,
+    .calendar-export {
+        display: none;
+    }
+
+    .calendar-grid {
+        border: 1px solid var(--graphite-grey);
+    }
+
+    .calendar-day {
+        border: 1px solid var(--mist-grey);
+    }
+}

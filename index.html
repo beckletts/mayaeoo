@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearson Key Dates Calendar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZT2BHJCT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YZT2BHJCT7');
+    </script>
+</head>
+<body class="bg-gray-50">
+    <script>const API_URL = 'https://script.google.com/macros/s/AKfycby7kD9pMSZT7R6UhjwvNueTA7TI2g3BVWEzz0EZzRCg4YJxGRvd6coQgWcesvbueVyRgg/exec';</script>
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Pearson Qualifications Key Dates Calendar</h1>
+
+   <!-- Calendar Controls -->
+<div class="calendar-controls mb-6">
+    <div class="month-navigation flex items-center justify-between mb-4">
+        <button class="calendar-button prev">Previous</button>
+        <h2 id="currentMonth" class="text-xl font-semibold"></h2>
+<button class="calendar-button next">Next</button>
+    </div>
+</div>
+
+        
+ <!-- Filter Controls -->
+<div class="filter-controls p-4 bg-white rounded-lg shadow-sm">
+    <h3 class="text-lg font-medium mb-3">Filter Qualifications</h3>
+    <div class="space-y-2">
+        <label class="flex items-center cursor-pointer">
+            <input 
+                type="checkbox" 
+                value="general" 
+                class="filter-checkbox form-checkbox h-5 w-5 text-coral mr-2"
+                onchange="updateFilters()">
+            <span class="ml-2">UK General Qualifications</span>
+        </label>
+        <label class="flex items-center cursor-pointer">
+            <input 
+                type="checkbox" 
+                value="vocational" 
+                class="filter-checkbox form-checkbox h-5 w-5 text-purple mr-2"
+                onchange="updateFilters()">
+            <span class="ml-2">Vocational Qualifications</span>
+        </label>
+        <label class="flex items-center cursor-pointer">
+            <input 
+                type="checkbox" 
+                value="international" 
+                class="filter-checkbox form-checkbox h-5 w-5 text-teal mr-2"
+                onchange="updateFilters()">
+            <span class="ml-2">International Qualifications</span>
+        </label>
+    </div>
+</div>
+
+    <!-- Colour key -->
+
+<div class="color-key p-4 bg-white rounded-lg shadow-sm mt-4">
+    <h3 class="text-lg font-medium mb-3">Calendar Key</h3>
+    <div class="flex flex-wrap gap-4">
+        <div class="key-item flex items-center">
+            <span class="key-dot general"></span>
+            <span class="ml-2">UK General Qualifications</span>
+        </div>
+        <div class="key-item flex items-center">
+            <span class="key-dot vocational"></span>
+            <span class="ml-2">Vocational Qualifications</span>
+        </div>
+        <div class="key-item flex items-center">
+            <span class="key-dot international"></span>
+            <span class="ml-2">International Qualifications</span>
+        </div>
+    </div>
+</div>
+            
+            
+    <!-- Calendar Export -->
+<div class="calendar-export mt-6 p-4 bg-white rounded-lg shadow-sm">
+    <h3 class="text-lg font-medium mb-3">Subscribe to Calendar</h3>
+    <div class="space-y-4">
+        <!-- Info Alert -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
+            <p class="text-sm text-blue-700">
+                Choose your preferred method: Click "Subscribe" for direct calendar subscription, 
+                or copy the URL to manually import in your calendar application.
+               <a href="https://support.microsoft.com/en-gb/office/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web-cff1429c-5af6-41ec-a5b4-74f2c278e98c" 
+   target="_blank" 
+   class="help-link inline-flex items-center ml-1">
+    Need help manually importing to Outlook?
+</a>
+            </p>
+        </div>
+        
+         <!-- Subscription Options -->
+        <div class="subscription-options space-y-4">
+            <div class="subscription-option" data-calendar-type="general">
+                <h4 class="font-medium mb-2">UK General Qualifications</h4>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <button class="subscribe-btn flex-1 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/71e1ed0bc516818993ad540391e5065986394877d8a80c81c516e3c5cdd1c349%40group.calendar.google.com/private-c92278530dc82a66cf0c905d2f937bca/basic.ics">
+                        Subscribe
+                    </button>
+                    <button class="copy-btn flex-1 border border-gray-300 px-4 py-2 rounded hover:bg-gray-50 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/71e1ed0bc516818993ad540391e5065986394877d8a80c81c516e3c5cdd1c349%40group.calendar.google.com/private-c92278530dc82a66cf0c905d2f937bca/basic.ics">
+                        <span>Copy URL</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="subscription-option" data-calendar-type="vocational">
+                <h4 class="font-medium mb-2">Vocational Qualifications</h4>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <button class="subscribe-btn flex-1 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/38d9fc53631e22481d13de14e12cac0d67d32797f8f982cf85b7f92d4f5efd8f%40group.calendar.google.com/private-59d56da3246411f90446f711e7b662aa/basic.ics">
+                        Subscribe
+                    </button>
+                    <button class="copy-btn flex-1 border border-gray-300 px-4 py-2 rounded hover:bg-gray-50 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/38d9fc53631e22481d13de14e12cac0d67d32797f8f982cf85b7f92d4f5efd8f%40group.calendar.google.com/private-59d56da3246411f90446f711e7b662aa/basic.ics">
+                        <span>Copy URL</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="subscription-option" data-calendar-type="international">
+                <h4 class="font-medium mb-2">International Qualifications</h4>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <button class="subscribe-btn flex-1 bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/c15cf1af939a82d8dc2e4067f7a028e13cb16649a9ee02685a0dc6b6091a2bef%40group.calendar.google.com/private-22093b69a357701b774eea4fa469b813/basic.ics">
+                        Subscribe
+                    </button>
+                    <button class="copy-btn flex-1 border border-gray-300 px-4 py-2 rounded hover:bg-gray-50 transition-colors"
+                            data-url="webcal://calendar.google.com/calendar/ical/c15cf1af939a82d8dc2e4067f7a028e13cb16649a9ee02685a0dc6b6091a2bef%40group.calendar.google.com/private-22093b69a357701b774eea4fa469b813/basic.ics">
+                        <span>Copy URL</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   <!-- Calendar Grid -->
+        <div class="mb-8">
+            <div class="calendar-grid mb-1 grid grid-cols-7 gap-1">
+                <div class="weekday-header p-2 text-center font-medium">Sun</div>
+                <div class="weekday-header p-2 text-center font-medium">Mon</div>
+                <div class="weekday-header p-2 text-center font-medium">Tue</div>
+                <div class="weekday-header p-2 text-center font-medium">Wed</div>
+                <div class="weekday-header p-2 text-center font-medium">Thu</div>
+                <div class="weekday-header p-2 text-center font-medium">Fri</div>
+                <div class="weekday-header p-2 text-center font-medium">Sat</div>
+            </div>
+            <div id="calendarGrid" class="calendar-grid grid grid-cols-7 gap-1"></div>
+        </div>
+
+<div id="loading" class="loading flex items-center justify-center min-h-[300px]">
+    <svg class="loading-spinner" width="80" height="80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <style>
+            .spinner {
+                transform-origin: center;
+                animation: spin 1.5s linear infinite;
+            }
+            .dot {
+                animation: pulse 1.5s ease-in-out infinite;
+            }
+            .dot2 { animation-delay: 0.3s; }
+            .dot3 { animation-delay: 0.6s; }
+            @keyframes spin {
+                100% { transform: rotate(360deg); }
+            }
+            @keyframes pulse {
+                0%, 100% { opacity: 0.3; }
+                50% { opacity: 1; }
+            }
+        </style>
+        <g class="spinner">
+            <circle cx="50" cy="20" r="8" fill="#003057" class="dot dot1"/>
+            <circle cx="74" cy="50" r="8" fill="#12B2A6" class="dot dot2"/>
+            <circle cx="50" cy="80" r="8" fill="#9E007E" class="dot dot3"/>
+        </g>
+    </svg>
+</div>
+
+    <!-- Error State -->
+        <div id="error" class="hidden text-red-500 py-8"></div>
+
+
+  <!-- Event Modal -->
+<div id="eventModal" class="event-modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+    <div class="modal-content p-6 max-w-lg w-full mx-4 bg-white rounded-lg">
+        <h3 id="modalDate" class="text-xl font-bold mb-4"></h3>
+        <div id="modalEvents" class="space-y-4"></div>
+        
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
