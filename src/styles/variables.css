@@ -1,0 +1,51 @@
+/* Pearson Brand Color Tokens */
+:root {
+  /* Core */
+  --pp-purple:       #0D004D;   /* Pearson Purple — dominant brand color */
+  --pp-amethyst:     #512EAB;   /* Secondary — emphasis, UI states */
+
+  /* Primary supporting */
+  --pp-turquoise:    #56E2E1;
+  --pp-light-purple: #C1BFFF;
+  --pp-mist-purple:  #EDECF6;
+  --pp-white:        #FFFFFF;
+
+  /* Accents (use sparingly) */
+  --pp-fuchsia:      #DF41CF;
+  --pp-amber:        #FFCE00;
+  --pp-turq-tint:    #B3F2F1;
+  --pp-amber-tint:   #FFE67F;
+  --pp-fuchsia-tint: #EFA0E7;
+
+  /* Semantic aliases */
+  --color-bg:        var(--pp-mist-purple);
+  --color-text:      var(--pp-purple);
+  --color-header-bg: var(--pp-purple);
+  --color-header-text: var(--pp-white);
+  --color-cta-bg:    var(--pp-amber);
+  --color-cta-text:  var(--pp-purple);
+  --color-admin-bg:  var(--pp-amethyst);
+  --color-admin-text: var(--pp-white);
+  --color-stale-bg:  var(--pp-amber);
+  --color-stale-text: var(--pp-purple);
+  --color-border:    var(--pp-light-purple);
+  --color-surface:   var(--pp-white);
+
+  /* Event type dot colors */
+  --dot-general:     var(--pp-turquoise);
+  --dot-international: var(--pp-amethyst);
+  --dot-vocational:  var(--pp-fuchsia);
+  --dot-other:       var(--pp-light-purple);
+
+  /* Filter toggle */
+  --filter-active-bg:   var(--pp-purple);
+  --filter-active-text: var(--pp-white);
+  --filter-inactive-bg: var(--pp-mist-purple);
+  --filter-inactive-text: var(--pp-purple);
+
+  /* Spacing */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+}

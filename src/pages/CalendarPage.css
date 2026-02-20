@@ -1,0 +1,97 @@
+.cal-page {
+  padding-bottom: 3rem;
+}
+
+.cal-page__main {
+  padding-top: 1.5rem;
+}
+
+.cal-page__error {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cal-page__error h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--pp-purple);
+  margin-bottom: 0.5rem;
+}
+
+.cal-page__error p {
+  color: var(--pp-amethyst);
+  font-size: 0.9375rem;
+  margin-bottom: 0.375rem;
+}
+
+/* Search results */
+.cal-page__search-results {
+  margin-top: 1.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: 0 1px 4px rgba(13, 0, 77, 0.06);
+}
+
+.cal-page__search-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pp-purple);
+  margin-bottom: 1rem;
+}
+
+.search-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.search-result-item__date {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--pp-amethyst);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.search-result-item__title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--pp-purple);
+  flex: 1;
+}
+
+.search-result-item__type {
+  font-size: 0.75rem;
+  color: var(--pp-amethyst);
+  background: var(--pp-mist-purple);
+  padding: 0.125rem 0.5rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.search-result-item__link {
+  padding: 0.25rem 0.625rem;
+  background: var(--pp-amber);
+  color: var(--pp-purple);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.search-result-item__link:hover {
+  background: var(--pp-amber-tint);
+  text-decoration: none;
+}

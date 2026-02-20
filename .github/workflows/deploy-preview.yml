@@ -1,16 +1,16 @@
-name: Deploy to GitHub Pages
+name: Deploy Preview
 
 on:
   push:
     branches:
-      - main
+      - rebuild
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: "pages-prod"
+  group: "pages-preview"
   cancel-in-progress: true
 
 jobs:
@@ -38,4 +38,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: gh-pages
+          publish_branch: gh-pages-preview
+          destination_dir: preview

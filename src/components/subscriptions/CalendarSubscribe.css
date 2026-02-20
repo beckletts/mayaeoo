@@ -1,0 +1,85 @@
+.cal-subscribe {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 1px 4px rgba(13, 0, 77, 0.06);
+}
+
+.cal-subscribe__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pp-purple);
+  margin-bottom: 1rem;
+}
+
+.cal-subscribe__feeds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cal-subscribe__feed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+
+.cal-subscribe__feed-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cal-subscribe__feed-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pp-purple);
+}
+
+.cal-subscribe__feed-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cal-subscribe__btn {
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  font-family: inherit;
+}
+
+.cal-subscribe__btn--subscribe {
+  background: var(--pp-purple);
+  color: var(--pp-white);
+}
+
+.cal-subscribe__btn--subscribe:hover {
+  background: var(--pp-amethyst);
+  text-decoration: none;
+  color: var(--pp-white);
+}
+
+.cal-subscribe__btn--copy {
+  background: var(--pp-mist-purple);
+  color: var(--pp-purple);
+  border: 1.5px solid var(--color-border);
+}
+
+.cal-subscribe__btn--copy:hover {
+  background: var(--pp-light-purple);
+}
+
+.cal-subscribe__feed-header .event-dot {
+  width: 10px;
+  height: 10px;
+}
