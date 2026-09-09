@@ -1,0 +1,19 @@
+# This calendar has moved to the Pearson Calendar Builder app.
+#
+# Every request to this site is redirected to the published calendar. The
+# redirect is:
+#   - a catch-all (/*), so old bookmarks to any path arrive in the right place
+#   - forced (force = true), which is required here: without it Netlify would
+#     serve the old index.html for "/" instead of redirecting, because that
+#     file still exists in this repo
+#   - 301 (permanent), which browsers cache hard. Change it to 302 if this
+#     address might ever serve something of its own again.
+#
+# The old site's files are left in place so this repo still shows what it was;
+# nothing is served from them while this redirect stands.
+
+[[redirects]]
+  from = "/*"
+  to = "https://pearsoncalendar.netlify.app/c/pearson-qualifications-key-dates-calendar-lp32o"
+  status = 301
+  force = true
